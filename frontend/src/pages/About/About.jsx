@@ -1,10 +1,10 @@
 // src/pages/About.js
 import React from 'react';
-import './About.module.css';
+import styles from './About.module.css';
 
 const About = () => {
   return (
-    <div className="about-container">
+    <div className={styles.aboutContainer}>
       <h1>About Us</h1>
       <p>
         Welcome to our website! We are a passionate team dedicated to providing the best experience for our users.

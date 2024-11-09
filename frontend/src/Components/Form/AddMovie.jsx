@@ -17,7 +17,7 @@ function AddMovie ({ open, onCancel, reload}) {
         if (name === 'image') {
           setFormData((prev) => ({
             ...prev,
-            image: files[0], // Asignamos el archivo de la imagen
+            image: files[0],
           }));
         } else {
           setFormData((prev) => ({
@@ -27,9 +27,8 @@ function AddMovie ({ open, onCancel, reload}) {
         }
       };
   const addMovie = async (e) => {
-    e.preventDefault(); // Evita la recarga de la página
+    e.preventDefault();
 
-    // Asegúrate de que el archivo de imagen esté presente
     if (!formData.image) {
       setError('Por favor, seleccione una imagen.');
       return;
@@ -39,7 +38,7 @@ function AddMovie ({ open, onCancel, reload}) {
     data.append('title', formData.title);
     data.append('description', formData.description);
     data.append('genre', formData.genre);
-    data.append('image', formData.image); // Agrega la imagen al FormData
+    data.append('image', formData.image);
 
     try {
       const result = await postData('movies/create', data);
@@ -54,12 +53,21 @@ function AddMovie ({ open, onCancel, reload}) {
   
     return (
 
-          <Modal open={open} onCancel={onCancel} onOk={addMovie}>
-            <form className={styles.formLogin}>
+          <Modal open={open} onCancel={onCancel} onOk={addMovie} title={'Agregar pelicula'} okText={'Agregar'} cancelText="Cancelar">
+            <form className={styles.form}>
                 <input className={styles.input} name="title" type="text" placeholder="Title" onChange={handleChange}/>
                 <input className={styles.input} name="description" type="text" placeholder="Description" onChange={handleChange}/>
                 <input className={styles.input} name="genre" type="text" placeholder="Genre" onChange={handleChange}/>
-                <input className={styles.input} name="image" type="file" accept="image/*" placeholder="Genre" onChange={handleChange}/>
+                <label className={styles.img}>
+                  Sube el archivo
+                  <input
+                    className={styles.input}
+                    name="image"
+                    type="file"
+                    accept="image/*"
+                    onChange={handleChange}
+                  />
+                </label>
             </form>
             </Modal>
     );

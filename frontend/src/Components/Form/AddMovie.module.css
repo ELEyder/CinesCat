@@ -1,0 +1,42 @@
+.form {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.input {
+    width: 100%;
+    border-radius: 20px;
+    padding: 10px;
+    border: 0;
+    outline: none;
+    font-size: 16px;
+    border: solid 1.6px var(--color-p);
+}
+.img {
+    display: inline-block;
+    width: 150px; /* Ajusta el tamaño del cuadrado */
+    height: 150px;
+    background-color: #f0f0f0; /* Color de fondo para simular el cuadrado */
+    border: 2px solid #ccc; /* Borde para el cuadrado */
+    border-radius: 8px; /* Borde redondeado opcional */
+    position: relative;
+    cursor: pointer; /* Cambia el cursor para indicar que se puede hacer clic */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .img input[type="file"] {
+    display: none; /* Oculta el input real */
+  }
+  
+  .img::before {
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+  }
+  

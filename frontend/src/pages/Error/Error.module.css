@@ -1,0 +1,38 @@
+.content {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.img {
+    border: solid 1px white;
+    width: 70%;
+}
+.title {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    font-weight: 400;
+    margin: 20px 0 0 0;
+}
+
+.details {
+    color: white;
+    font-weight: 100;
+    margin: 20px 0 0 0;
+}
+
+.inicio {
+    margin: 20px 0 0 0;
+    color: var(--color-p);
+    text-decoration: none;
+}

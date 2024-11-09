@@ -4,6 +4,7 @@ import Button from '../../Components/Button/Button';
 import styles from './Home.module.css';
 import AddMovie from '../../Components/Form/AddMovie'
 import { fetchData } from "../../api/api";
+
 function Home () {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -12,6 +13,7 @@ function Home () {
     const [reload, setReload] = useState(false);
   
     useEffect(() => {
+      document.title = "Home";
       const getData = async () => {
         try {
           const result = await fetchData('movies');
@@ -36,6 +38,8 @@ function Home () {
     if (error) return <p>{error}</p>;
   
     return (
+      <>
+
       <div className={styles.content}>
         <Button text='+ Add Movie' onClick={()=>{
             setOpen(true)
@@ -49,6 +53,7 @@ function Home () {
           
           <AddMovie open={open} onCancel={()=>setOpen(false)} reload={()=>setReload(!reload)}/>
       </div>
+      </>
     );
   };
 

@@ -34,7 +34,7 @@
 .input {
     width: 200px;
     border-radius: 20px;
-    padding: 7px;
+    padding: 12px;
     border: 0;
     outline: none;
     border: solid 1.6px var(--color-p);

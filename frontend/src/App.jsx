@@ -1,22 +1,22 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import Layout from './Layout';
 import Login from './pages/Login/Login';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
-import Header from './Components/Header/Header';
 
 import './App.css';
 
 function App() {
-  const location = useLocation();
   return (
     <>
-      {/* Condicional para no mostrar el Header en la ruta /login */}
-      {location.pathname !== '/login' && <Header />}
       <Routes>
+      <Route path="/" element={<Layout />}>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/about" element={<About />} />
-        <Route path="/peliculas" element={<Login />} />
+        <Route path="/peliculas" element={<About />} />
+      </Route>
+      <Route path="/login" element={<Login />} />
+      <Route path="/*" element={<Login />} />
       </Routes>
     </>
   );

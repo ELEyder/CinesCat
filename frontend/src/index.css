@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'KiddosyFreeRegular';
+  src:
+  /* url('./assets/fonts/KiddosyfreeRegular-GOEag.woff2') format('woff2'), */
+       url('./assets/fonts/KiddosyfreeRegular-GOEag.otf') format('opentype');
+  font-style: normal;
+}
+
+:root {
+  font-family: 'KiddosyFreeRegular';
+}
+input {
+  font-family: 'KiddosyFreeRegular';
+}
+body {
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}

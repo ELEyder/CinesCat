@@ -1,5 +1,5 @@
 import * as React from "react"
-const Logo = ({width, height, fill}) => (
+const Logo = ({width, height, fill = "#201e1e"}) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={width}

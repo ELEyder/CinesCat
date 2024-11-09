@@ -1,0 +1,27 @@
+.header {
+    background-color: var(--color-p);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    box-shadow: 0 4px 8px rgba(150, 150, 255, 0.3), 0 4px 16px rgba(255, 182, 193, 0.2);
+    padding: 0px 40px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title h1 {
+    margin: 15px 20px;
+    font-weight: 200;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}

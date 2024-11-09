@@ -1,0 +1,21 @@
+.Button {
+    text-decoration: none;
+    color: var(--black);
+    padding: 20px 35px;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-p);
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.Button:hover {
+    background-color: var(--color-s);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.Button:active {
+    transform: scale(1);
+}

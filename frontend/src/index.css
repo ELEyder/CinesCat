@@ -8,8 +8,14 @@
 
 :root {
   font-family: 'KiddosyFreeRegular';
+  --color-p: #FF8A8A;
+  --color-s: #F4DEB3;
+  --black: #201e1e;
 }
 input {
+  font-family: 'KiddosyFreeRegular';
+}
+button{
   font-family: 'KiddosyFreeRegular';
 }
 body {

@@ -1,0 +1,38 @@
+/* Card.module.css */
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .cardImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .cardContent {
+    padding: 16px;
+  }
+  
+  .cardTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .cardDescription {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+  }
+  

@@ -1,0 +1,12 @@
+.content {
+padding: 30px;
+}
+.movies {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.subtitle {
+    margin: 20px 0;
+}

@@ -23,6 +23,17 @@ public class Movie {
     @Column(name="genre", length = 50)
     private String genre;
 
+    @Column(name="image", length = 50)
+    private String image;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     public int getId() {
         return id;
     }
@@ -54,6 +65,8 @@ public class Movie {
     public void setGenre(String genre) {
         this.genre = genre;
     }
-
+    public String getImageUrl() {
+        return "http://localhost:8080/images/" + this.image;
+    }
 
 }

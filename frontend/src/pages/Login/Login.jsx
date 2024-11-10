@@ -15,8 +15,9 @@ function Login () {
             </div>
             <input className={styles.input} name="username" type="text" placeholder="Usuario" autoComplete="username"/>
             <input className={styles.input} name="password" type="password" placeholder="Password" autoComplete="current-password"/>
-            {/* <input className={styles.button} type="submit" value="Entrar"/> */}
-            <Link to={"/"} className={styles.button}>Entrar</Link>
+            <Link to={"/"} className={styles.button}>
+                <input className={styles.button} type="submit" value="Entrar"/>
+            </Link>
         </form>
     </div>
     </>)

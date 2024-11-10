@@ -5,23 +5,20 @@ import styles from './About.module.css';
 const About = () => {
   return (
     <div className={styles.aboutContainer}>
-      <h1>About Us</h1>
+      <h1>Acerca de Nosotros</h1>
       <p>
-        Welcome to our website! We are a passionate team dedicated to providing the best experience for our users.
-        Our mission is to make everything simple and efficient, whether it's managing your day-to-day tasks or helping you
-        achieve your goals faster.
+        ¡Bienvenido a nuestro sitio web! Somos un equipo apasionado dedicado a proporcionar la mejor experiencia para nuestros usuarios.
+        Nuestra misión es hacer todo simple y eficiente, ya sea gestionando tus tareas diarias o ayudándote a alcanzar tus objetivos más rápido.
       </p>
       <p>
-        Our platform is built using the latest technologies like React, Vite, and Spring Boot, ensuring fast and responsive
-        experiences. We are committed to continuously improving our platform to meet your needs.
+        Nuestra plataforma está construida con las últimas tecnologías como React, Vite y Spring Boot, asegurando experiencias rápidas y receptivas.
+        Estamos comprometidos en mejorar continuamente nuestra plataforma para satisfacer tus necesidades.
       </p>
       <div className="about-team">
-        <h2>Our Team</h2>
+        <h2>Nuestro Equipo</h2>
         <ul>
-          <li>Eyder Huayta - CEO</li>
-          <li>Eyder Huayta - CTO</li>
-          <li>Eyder Huayta - Lead Developer</li>
-          <li>Eyder Huayta - Designer</li>
+          <li>Eyder Huayta - Líder de Desarrollo</li>
+          <li>Eyder Huayta - Diseñador</li>
         </ul>
       </div>
     </div>

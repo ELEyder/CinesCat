@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { postData } from "../../api/api";
 import styles from './AddCinema.module.css';
 import { Modal } from 'antd'
@@ -29,7 +29,6 @@ function AddMovie ({ open, onCancel, reload}) {
     data.append('address', formData.address);
     data.append('city', formData.city);
     data.append('phone', formData.phone);
-
     try {
       const result = await postData('cinemas/create', data);
       console.log(result);

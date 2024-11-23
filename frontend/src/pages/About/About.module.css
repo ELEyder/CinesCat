@@ -1,3 +1,9 @@
 .aboutContainer {
+    max-width: 1000px;
+    margin: auto;
     padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

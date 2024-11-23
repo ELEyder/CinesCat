@@ -21,6 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.kapu.cinescat.models.Movie;
 import com.kapu.cinescat.repo.IMovieRepo;
 
+@CrossOrigin(origins = {"http://localhost:5173", "https://1ktzpbmr-5173.brs.devtunnels.ms"})
 @RestController
 public class MovieController {
 
@@ -30,13 +31,11 @@ public class MovieController {
     @Autowired
     private IMovieRepo IMovieRepo;
 
-    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/movies")
     public List<Movie> getMovies() {
         return IMovieRepo.findAll();
     }
 
-    @CrossOrigin(origins = "http://localhost:5173")
     @PostMapping("/movies/create")
     public ResponseEntity<String> addMovie(@RequestParam("title") String title,
             @RequestParam("description") String description,

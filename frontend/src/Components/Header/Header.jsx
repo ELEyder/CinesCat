@@ -11,9 +11,9 @@ function Header () {
             </div>
             <div className={styles.buttons}>
                 <Button text={'Home'} to={'/'}/>
-                <Button text={'Peliculas'} to={'/peliculas'}/>
-                <Button text={'Cines'} to={'/películas'}/>
-                <Button text={'Chocolateria'} to={'/películas'}/>
+                <Button text={'Movies'} to={'/peliculas'}/>
+                <Button text={'Cinemas'} to={'/cines'}/>
+                <Button text={'concessions'} to={'/películas'}/>
                 <Button text={'About'} to={'/about'}/>
             </div>
             <Button text={'Login'} to={'/login'}/>

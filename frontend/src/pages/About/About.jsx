@@ -16,10 +16,8 @@ const About = () => {
       </p>
       <div className="about-team">
         <h2>Nuestro Equipo</h2>
-        <ul>
-          <li>Eyder Huayta - Líder de Desarrollo</li>
-          <li>Eyder Huayta - Diseñador</li>
-        </ul>
+          <p>Eyder Huayta - Líder de Desarrollo</p>
+          <p>Eyder Huayta - Diseñador</p>
       </div>
     </div>
   );

@@ -14,20 +14,18 @@ import org.springframework.web.bind.annotation.RestController;
 import com.kapu.cinescat.models.User;
 import com.kapu.cinescat.repo.IUserRepo;
 
-
+@CrossOrigin(origins = {"http://localhost:5173", "https://1ktzpbmr-5173.brs.devtunnels.ms"})
 @RestController
 public class UserController {
 
     @Autowired
     private IUserRepo IUser;
     
-    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/users")
     public List<User> getUsers() {
         return IUser.findAll();
     }
 
-    @CrossOrigin(origins = "http://localhost:5173")
     @PostMapping("/users/create")
     public ResponseEntity<String> userCreate(@RequestBody User user) {
         IUser.save(user);

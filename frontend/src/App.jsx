@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Layout from './Layout';
 import Login from './pages/Login/Login';
 import Home from './pages/Home/Home';
+import Movies from './pages/Movies/Movies';
+import Cinema from './pages/Cinema/Cinema';
 import About from './pages/About/About';
 import Error from './pages/Error/Error';
 
@@ -15,7 +17,8 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/peliculas" element={<Home />} />
+        <Route path="/peliculas" element={<Movies />} />
+        <Route path="/cines" element={<Cinema />} />
       </Route>
       <Route path="/login" element={<Login />} />
       <Route path="/*" element={<Error />} />

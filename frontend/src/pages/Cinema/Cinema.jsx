@@ -1,26 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import Card from '../../Components/Card/Card';
 import Button from '../../Components/Button/Button';
-import styles from './Home.module.css';
-import AddMovie from '../../Components/Form/AddMovie'
+import styles from './Cinema.module.css';
+import AddCinema from '../../Components/Form/AddCinema'
 import { fetchData } from "../../api/api";
 
-function Home () {
+function Cinema () {
     const [data, setData] = useState([]);
-    const [dataCinemas, setDataCinema] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [open, setOpen] = useState(false);
     const [reload, setReload] = useState(false);
   
     useEffect(() => {
-      document.title = "Home";
+      document.title = "Cines";
       const getData = async () => {
         try {
-          const result = await fetchData('movies');
-          const resultCinemas = await fetchData('cinemas');
+          const result = await fetchData('cinemas');
           setData(result);
-          setDataCinema(resultCinemas);
           setLoading(false);
         } catch (error) {
           setError('Error fetching data');
@@ -44,21 +41,20 @@ function Home () {
       <>
 
       <div className={styles.content}>
-        <h1 className={styles.subtitle}>Last Movies</h1>
-        <div className={styles.movies}>
-          {data.map(item => (
-            <Card key={item.id} id={item.id} title={item.title} description={item.description} genre={item.genre} imageUrl={item.imageUrl}/>
-          ))}
-        </div>
+        <Button text='Add Cinema' onClick={()=>{
+            setOpen(true)
+        }}/>
         <h1 className={styles.subtitle}>Last Cinemas</h1>
         <div className={styles.movies}>
-          {dataCinemas.map(item => (
+          {data.map(item => (
             <Card key={item.id} id={item.id} title={item.name} description={item.address} genre={item.phone} imageUrl={'./img/cine.jpg'}/>
           ))}
         </div>
+          
+          <AddCinema open={open} onCancel={()=>setOpen(false)} reload={()=>setReload(!reload)}/>
       </div>
       </>
     );
   };
 
-export default Home
+export default Cinema

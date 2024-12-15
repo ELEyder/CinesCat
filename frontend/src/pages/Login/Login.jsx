@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { postData } from "../../api/api";
 import styles from './Login.module.css';
 import Logo from "../../Components/Logo";
+import { useAuth } from "../../context/authContext";
 
 function Login() {
     const [error, setError] = useState(null);
+    const { login } = useAuth();
+    const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
         username: '',
         password: '',
     });
 
-    // Manejo del formulario de login
-    const login = async (e) => {
+    const loginFetch = async (e) => {
         e.preventDefault();
 
         const data = new FormData();
@@ -21,12 +24,11 @@ function Login() {
 
         try {
             const result = await postData('login', data);
-            console.log(result);
-
-            // Aquí podrías verificar de forma más precisa si el login fue exitoso
-            if (result.status === 200) {
-                alert("Login realizado");
-                // Aquí podrías redirigir o hacer alguna acción adicional
+            if (result.username) {
+                alert(result.username);
+                login(result)
+                localStorage.setItem('user', JSON.stringify(result));
+                navigate('/')
             }
         } catch (error) {
             console.error(error);
@@ -34,7 +36,6 @@ function Login() {
         }
     };
 
-    // Cambiar el título de la página cuando se cargue el componente
     useEffect(() => {
         document.title = "Login - Register";
     }, []);
@@ -42,7 +43,7 @@ function Login() {
     return (
         <>
             <div className={styles.content}>
-                <form className={styles.formLogin} onSubmit={login}>
+                <form className={styles.formLogin} onSubmit={loginFetch}>
                     <div className={styles.header}>
                         <h1 className={styles.title}>CinesCat</h1>
                         <Logo width={60} height={60} fill={"#201e1e"} />

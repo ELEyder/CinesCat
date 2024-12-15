@@ -35,7 +35,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestParam("username") String username,
+    public ResponseEntity<Object> login(@RequestParam("username") String username,
             @RequestParam("password") String password) {
         Optional<User> userOptional = IUser.findByUsername(username);
 
@@ -43,7 +43,7 @@ public class UserController {
             User user = userOptional.get();
 
             if (user.getPassword().equals(password)) {
-                return ResponseEntity.ok("Login exitoso!");
+                return ResponseEntity.ok(user);
             } else {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Contraseña incorrecta");
             }

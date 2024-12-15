@@ -1,8 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from './Header.module.css';
 import Logo from "../Logo";
 import Button from "../Button/Button";
+import { useAuth } from "../../context/authContext";
+
 function Header () {
+    const { user, logout } = useAuth();
     return(<>
         <nav className={styles.header}>
             <div className={styles.title}>
@@ -16,7 +20,14 @@ function Header () {
                 <Button text={'concessions'} to={'/películas'}/>
                 <Button text={'About'} to={'/about'}/>
             </div>
-            <Button text={'Login'} to={'/login'}/>
+            {user ? (
+                <div className={styles.buttons}>
+                    <Button text={user.username || 'Profile'} to={'/profile'} />
+                    <Button text={'Logout'} onClick={logout} />
+                </div>
+            ) : (
+                <Button text={'Login'} to={'/login'}/>
+            )}
         </nav>
     </>)
 }

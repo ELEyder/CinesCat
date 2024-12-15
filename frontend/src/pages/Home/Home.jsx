@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Card from '../../Components/Card/Card';
-import Button from '../../Components/Button/Button';
 import styles from './Home.module.css';
-import AddMovie from '../../Components/Form/AddMovie'
 import { fetchData } from "../../api/api";
-
 function Home () {
     const [data, setData] = useState([]);
     const [dataCinemas, setDataCinema] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [open, setOpen] = useState(false);
     const [reload, setReload] = useState(false);
-  
+
     useEffect(() => {
       document.title = "Home";
       const getData = async () => {
@@ -42,7 +38,6 @@ function Home () {
   
     return (
       <>
-
       <div className={styles.content}>
         <h1 className={styles.subtitle}>Last Movies</h1>
         <div className={styles.movies}>

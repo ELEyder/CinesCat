@@ -6,8 +6,8 @@ import Logo from "../../Components/Logo";
 import { useAuth } from "../../context/authContext";
 
 function Login() {
-    const [error, setError] = useState(null);
     const { login } = useAuth();
+    const [ error, setError ] = useState(null);
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({

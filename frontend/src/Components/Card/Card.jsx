@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Card.module.css'; // Importa el archivo de CSS Module
 import { Image } from 'antd';
-const Card = ({ id, title, description, genre, imageUrl }) => {
+const Card = ({ title, description, genre, imageUrl }) => {
   return (
     <div className={styles.card}>
       <div className={styles.imgContent}>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { postData } from "../../api/api";
 import styles from './AddMovie.module.css';
 import { Modal } from 'antd'
@@ -47,13 +47,13 @@ function AddMovie ({ open, onCancel, reload}) {
       onCancel();
     } catch (error) {
       console.error(error);
-      setError('Error al agregar la película.');
+      setError('Error to add movie.');
     }
   };
   
     return (
 
-          <Modal open={open} onCancel={onCancel} onOk={addMovie} title={'Agregar pelicula'} okText={'Agregar'} cancelText="Cancelar">
+          <Modal open={open} onCancel={onCancel} onOk={addMovie} title={'Add movie'} okText={'Add'} cancelText="Cancelar">
             <form className={styles.form}>
                 <input className={styles.input} name="title" type="text" placeholder="Title" onChange={handleChange}/>
                 <input className={styles.input} name="description" type="text" placeholder="Description" onChange={handleChange}/>

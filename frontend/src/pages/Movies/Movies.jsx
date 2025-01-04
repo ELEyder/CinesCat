@@ -46,7 +46,7 @@ function Movies () {
         <h1 className={styles.subtitle}>Last Movies</h1>
         <div className={styles.movies}>
           {data.map(item => (
-            <Card key={item.id} id={item.id} title={item.title} description={item.description} genre={item.genre} imageUrl={item.imageUrl}/>
+            <Card key={item.id} title={item.title} description={item.description} genre={item.genre} imageUrl={item.imageUrl}/>
           ))}
         </div>
 

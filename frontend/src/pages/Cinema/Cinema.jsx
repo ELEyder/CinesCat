@@ -4,6 +4,7 @@ import Button from '../../Components/Button/Button';
 import styles from './Cinema.module.css';
 import AddCinema from '../../Components/Form/AddCinema'
 import { fetchData } from "../../api/api";
+import imgCinema from "../../assets/img/cinemas/cinema.jpg"
 
 function Cinema () {
     const [data, setData] = useState([]);
@@ -47,7 +48,7 @@ function Cinema () {
         <h1 className={styles.subtitle}>Last Cinemas</h1>
         <div className={styles.movies}>
           {data.map(item => (
-            <Card key={item.id} id={item.id} title={item.name} description={item.address} genre={item.phone} imageUrl={'./img/cine.jpg'}/>
+            <Card key={item.id} title={item.name} description={item.address} genre={item.phone} imageUrl={`${imgCinema}?t=${new Date().getTime()}`}/>
           ))}
         </div>
           

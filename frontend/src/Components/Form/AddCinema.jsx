@@ -36,12 +36,12 @@ function AddMovie ({ open, onCancel, reload}) {
       onCancel();
     } catch (error) {
       console.error(error);
-      setError('Error al agregar el cine.');
+      setError('Error to add cinema.');
     }
   };
   
     return (
-          <Modal open={open} onCancel={onCancel} onOk={addCinema} title={'Agregar cine'} okText={'Agregar'} cancelText="Cancelar">
+          <Modal open={open} onCancel={onCancel} onOk={addCinema} title={'Add cinema'} okText={'Add'} cancelText="Cancelar">
             <form className={styles.form}>
                 <input className={styles.input} name="name" type="text" placeholder="Name" onChange={handleChange}/>
                 <input className={styles.input} name="address" type="text" placeholder="Address" onChange={handleChange}/>

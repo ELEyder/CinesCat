@@ -1,15 +1,8 @@
-# CinesCat
+# React + Vite
 
-CinesCat es una aplicación web que permite gestionar la información de películas, horarios y reservas de cines. El proyecto está dividido en dos partes: el backend construido con **Spring Boot** y el frontend construido con **React** y **Vite**.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Tecnologías utilizadas
+Currently, two official plugins are available:
 
-### Backend (Spring Boot)
-- **Java** 17+
-- **Spring Boot** 2.x
-- **Spring Data JPA** (para la conexión con la base de datos)
-
-### Frontend (React + Vite)
-- **React** 18
-- **Vite** (para la construcción del proyecto)
-- **React Router DOM** (para el manejo de rutas)
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

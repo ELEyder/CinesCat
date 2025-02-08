@@ -12,7 +12,7 @@ import { ConfigProvider } from 'antd';
 
 function App() {
   return (
-      <Routes>
+    <Routes>
       <Route path="/" element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -21,7 +21,7 @@ function App() {
       </Route>
       <Route path="/login" element={<Login />} />
       <Route path="/*" element={<Error />} />
-      </Routes>
+    </Routes>
   );
 }
 
@@ -48,9 +48,9 @@ function AppWrapper() {
           },
         },
       }}>
-    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-      <App />
-    </Router>
+      <Router basename="/cinescat/" future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+        <App />
+      </Router>
     </ConfigProvider>
 
   );

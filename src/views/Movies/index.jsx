@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Card from '../../Components/Card/Card';
 import Button from '../../Components/Button/Button';
-import styles from './Movies.module.css';
+import styles from './index.module.css';
 import AddMovie from '../../Components/Form/AddMovie'
 import { fetchData } from "../../api/api";
 

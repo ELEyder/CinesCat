@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Card from '../../Components/Card/Card';
-import styles from './Home.module.css';
+import styles from './index.module.css';
 import { fetchData } from "../../api/api";
 import imgCinema from "../../assets/img/cinemas/cinema.jpg"
 

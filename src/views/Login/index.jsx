@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { postData } from "../../api/api";
-import styles from './Login.module.css';
+import styles from './index.module.css';
 import Logo from "../../Components/Logo";
 import { useAuth } from "../../context/authContext";
 

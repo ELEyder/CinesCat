@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Card from '../../Components/Card/Card';
 import Button from '../../Components/Button/Button';
-import styles from './Cinema.module.css';
+import styles from './index.module.css';
 import AddCinema from '../../Components/Form/AddCinema'
 import { fetchData } from "../../api/api";
 import imgCinema from "../../assets/img/cinemas/cinema.jpg"

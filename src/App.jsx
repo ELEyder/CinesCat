@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './Layout';
-import Login from './pages/Login/Login';
-import Home from './pages/Home/Home';
-import Movies from './pages/Movies/Movies';
-import Cinema from './pages/Cinema/Cinema';
-import About from './pages/About/About';
-import Error from './pages/Error/Error';
+import Login from './views/Login';
+import Home from './views/Home';
+import Movies from './views/Movies';
+import Cinema from './views/Cinema';
+import About from './views/About';
+import Error from './views/Error';
 
 import './App.css';
 import { ConfigProvider } from 'antd';

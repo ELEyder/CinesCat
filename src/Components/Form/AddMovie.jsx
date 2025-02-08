@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { postData } from "../../api/api";
 import styles from './AddMovie.module.css';
 import { Modal } from 'antd'
+import { apiClient } from '../../client/apiClient';
 
 function AddMovie ({ open, onCancel, reload}) {
     const [error, setError] = useState(null)
@@ -41,7 +41,7 @@ function AddMovie ({ open, onCancel, reload}) {
     data.append('image', formData.image);
 
     try {
-      const result = await postData('movies/create', data);
+      const result = await apiClient.post('movies/create', data);
       console.log(result);
       reload()
       onCancel();

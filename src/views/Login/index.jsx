@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { postData } from "../../api/api";
 import styles from './index.module.css';
 import Logo from "../../Components/Logo";
 import { useAuth } from "../../context/authContext";
+import { apiClient } from "../../client/apiClient";
 
 function Login() {
     const { login } = useAuth();
@@ -23,7 +23,7 @@ function Login() {
         data.append('password', formData.password);
 
         try {
-            const result = await postData('login', data);
+            const result = await apiClient.post('login', data);
             if (result.username) {
                 alert(result.username);
                 login(result)

@@ -1,22 +1,22 @@
 @font-face {
-  font-family: 'KiddosyFreeRegular';
+  font-family: "KiddosyFreeRegular";
   src:
-  /* url('./assets/fonts/KiddosyfreeRegular-GOEag.woff2') format('woff2'), */
-       url('./assets/fonts/KiddosyfreeRegular-GOEag.otf') format('opentype');
+  url("./fonts/KiddosyfreeRegular-GOEag.otf")
+    format("opentype");
   font-style: normal;
 }
 
 :root {
-  font-family: 'KiddosyFreeRegular';
-  --color-p: #FF8A8A;
-  --color-s: #F4DEB3;
+  font-family: "KiddosyFreeRegular";
+  --color-p: #ff8a8a;
+  --color-s: #f4deb3;
   --black: #201e1e;
 }
 input {
-  font-family: 'KiddosyFreeRegular';
+  font-family: "KiddosyFreeRegular";
 }
-button{
-  font-family: 'KiddosyFreeRegular';
+button {
+  font-family: "KiddosyFreeRegular";
 }
 body {
   background-color: white;

@@ -3,8 +3,8 @@ import Card from '../../Components/Card/Card';
 import Button from '../../Components/Button/Button';
 import styles from './index.module.css';
 import AddCinema from '../../Components/Form/AddCinema'
-import { fetchData } from "../../api/api";
-import imgCinema from "../../assets/img/cinemas/cinema.jpg"
+import { apiClient } from '../../client/apiClient';
+import Loading from '../../Components/Loading/Loading';
 
 function Cinema () {
     const [data, setData] = useState([]);
@@ -17,8 +17,8 @@ function Cinema () {
       document.title = "Cines";
       const getData = async () => {
         try {
-          const result = await fetchData('cinemas');
-          setData(result);
+          const result = await apiClient.get('cinemas');
+          setData(result.data);
           setLoading(false);
         } catch (error) {
           setError('Error fetching data');
@@ -35,7 +35,7 @@ function Cinema () {
       return () => clearTimeout(timer);
     }, [reload]);
   
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <Loading />;
     if (error) return <p>{error}</p>;
   
     return (
@@ -48,7 +48,7 @@ function Cinema () {
         <h1 className={styles.subtitle}>Last Cinemas</h1>
         <div className={styles.movies}>
           {data.map(item => (
-            <Card key={item.id} title={item.name} description={item.address} genre={item.phone} imageUrl={`${imgCinema}?t=${new Date().getTime()}`}/>
+            <Card key={item.id} title={item.name} description={item.address} genre={item.phone} imageUrl={`img/cinemas/cinema.jpg`}/>
           ))}
         </div>
           

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Card from '../../Components/Card/Card';
 import styles from './index.module.css';
-import { fetchData } from "../../api/api";
-import imgCinema from "../../assets/img/cinemas/cinema.jpg"
+import { apiClient } from '../../client/apiClient';
+import Loading from '../../Components/Loading/Loading';
 
 function Home() {
   const [data, setData] = useState({ movies: [], cinemas: [] });
@@ -15,9 +15,9 @@ function Home() {
     const getData = async () => {
       try {
         setLoading(true);
-        const moviesResult = await fetchData('movies');
-        const cinemasResult = await fetchData('cinemas');
-        setData({ movies: moviesResult, cinemas: cinemasResult });
+        const moviesResult = await apiClient.get('movies');
+        const cinemasResult = await apiClient.get('cinemas');
+        setData({ movies: moviesResult.data, cinemas: cinemasResult.data });
       } catch (error) {
         setError('Error fetching data');
       } finally {
@@ -28,7 +28,7 @@ function Home() {
     getData();
   }, []);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading />;
   if (error) return <p>{error}</p>;
 
   const renderCards = (dataList, type) => {
@@ -43,7 +43,7 @@ function Home() {
             title={type === 'Movies' ? item.title : item.name}
             description={type === 'Movies' ? item.description : item.address}
             genre={type === 'Movies' ? item.genre : item.phone}
-            imageUrl={type === 'Movies' ? item.imageUrl : `${imgCinema}?t=${new Date().getTime()}`}
+            imageUrl={type === 'Movies' ? item.imageUrl : `./img/cinemas/cinema.jpg`}
           />
         ))}
       </div>

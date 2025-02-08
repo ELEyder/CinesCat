@@ -3,7 +3,8 @@ import Card from '../../Components/Card/Card';
 import Button from '../../Components/Button/Button';
 import styles from './index.module.css';
 import AddMovie from '../../Components/Form/AddMovie'
-import { fetchData } from "../../api/api";
+import { apiClient } from '../../client/apiClient';
+import Loading from '../../Components/Loading/Loading';
 
 function Movies () {
     const [data, setData] = useState([]);
@@ -16,8 +17,8 @@ function Movies () {
       document.title = "Home";
       const getData = async () => {
         try {
-          const result = await fetchData('movies');
-          setData(result);
+          const result = await apiClient.get('movies');
+          setData(result.data);
           setLoading(false);
         } catch (error) {
           setError('Error fetching data');
@@ -34,7 +35,7 @@ function Movies () {
       return () => clearTimeout(timer);
     }, [reload]);
   
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <Loading />;
     if (error) return <p>{error}</p>;
   
     return (

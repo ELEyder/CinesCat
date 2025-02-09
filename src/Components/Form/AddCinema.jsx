@@ -52,6 +52,7 @@ function AddCinema({ open, onCancel, reload }) {
           placeholder="Name"
           value={formData.name}
           onChange={handleChange}
+          required
         />
         <input
           className={styles.input}
@@ -60,6 +61,7 @@ function AddCinema({ open, onCancel, reload }) {
           placeholder="Address"
           value={formData.address}
           onChange={handleChange}
+          required
         />
         <input
           className={styles.input}
@@ -68,6 +70,7 @@ function AddCinema({ open, onCancel, reload }) {
           placeholder="City"
           value={formData.city}
           onChange={handleChange}
+          required
         />
         <input
           className={styles.input}
@@ -76,6 +79,7 @@ function AddCinema({ open, onCancel, reload }) {
           placeholder="Phone"
           value={formData.phone}
           onChange={handleChange}
+          required
         />
         {error && <p className={styles.error}>{error}</p>}
       </form>

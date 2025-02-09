@@ -7,7 +7,6 @@ import Cinema from './views/Cinema';
 import About from './views/About';
 import Error from './views/Error';
 
-import './App.css';
 import { ConfigProvider } from 'antd';
 
 function App() {
@@ -28,6 +27,7 @@ function App() {
 function AppWrapper() {
   const c1 = getComputedStyle(root).getPropertyValue('--color-p').trim();
   const c2 = getComputedStyle(root).getPropertyValue('--color-s').trim();
+  const black = getComputedStyle(root).getPropertyValue('--black').trim();
 
   return (
     <ConfigProvider
@@ -42,10 +42,16 @@ function AppWrapper() {
 
           },
           Button: {
+            fontFamily: "KiddosyFreeRegular",
             colorPrimary: c1,
             colorPrimaryHover: c2,
-            colorText: 'black'
+            primaryColor: black,
+            defaultColor : black
+            
           },
+          Menu : {
+            itemPaddingInline: 0
+          }
         },
       }}>
       <Router basename="/cinescat/" future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>

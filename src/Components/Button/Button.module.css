@@ -1,15 +1,83 @@
-.Button {
-    text-decoration: none;
-    color: var(--black);
-    padding: 20px 35px;
-    display: flex;
-    align-items: center;
-    background-color: var(--color-p);
-    text-transform: uppercase;
-    transition: all 0.2s ease;
+.button {
+  color: var(--black);
+  stroke: var(--black);
+  background-color: var(--color-p);
+  font-weight: 500;
+  font-size: 20px;
+  border: 0px;
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.1s;
+
+  svg, path, circle, line, g {
+    stroke: var(--cp);
+    color: var(--cp);
+  }
+  g {
+    fill: var(--cp);
+  }
 }
 
-.Button:hover {
-    background-color: var(--color-s);
-    cursor: pointer;
+.button:hover {
+  color: white;
+  background-color: var(--color-p);
+  svg, path, circle, line, g {
+    stroke: white;
+    color: white;
+  }
+  g {
+    fill: white;
+  }
+}
+
+.secondary {
+  background-color: white;
+  color: var(--cp);
+  font-family: var(--poppins);
+  font-weight: 500;
+  border: 0px;
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.1s;
+
+  svg, path, circle, line, g {
+    stroke: var(--cp);
+    color: var(--cp);
+  }
+  g {
+    fill: var(--cp);
+  }
+}
+
+.secondary:hover {
+  color: white;
+  background-color: var(--cp);
+  svg, path, circle, line, g {
+    stroke: white;
+    color: white;
+  }
+  g {
+    fill: white;
+  }
+}
+
+input.media {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+label.media {
+  display: flex;
 }

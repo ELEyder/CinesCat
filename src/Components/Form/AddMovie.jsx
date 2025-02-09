@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './AddMovie.module.css';
 import { Modal } from 'antd'
-import { apiClient } from '../../client/apiClient';
+import { apiClient, apiClientFiles } from '../../client/apiClient';
 
 function AddMovie ({ open, onCancel, reload}) {
     const [error, setError] = useState(null)
@@ -12,6 +12,7 @@ function AddMovie ({ open, onCancel, reload}) {
         genre: '',
         image: null,
       });
+
       const handleChange = (e) => {
         const { name, value, files } = e.target;
         if (name === 'image') {
@@ -41,7 +42,10 @@ function AddMovie ({ open, onCancel, reload}) {
     data.append('image', formData.image);
 
     try {
-      const result = await apiClient.post('movies/create', data);
+      data.forEach((value, key) => {
+        console.log(`${key}:`, value);
+      });
+      const result = await apiClientFiles.post('movies/create', data);
       console.log(result);
       reload()
       onCancel();
